@@ -34,7 +34,7 @@ def logar():
                 return redirect(url_for(".logar"))
 
         except:
-
+            
             flash("Usuário ou Senha Invalidos")
             return redirect(url_for(".logar"))
 
@@ -107,6 +107,6 @@ def deletar_tarefa(nome_tarefa,id_usuario):
     return redirect(url_for(".listar_tarefas", id_usuario=id_usuario))
 
 
-if __name__ == "__main__":
+if __name__ =="__main__":
     port = int(os.environ.get("PORT", 5000))
-    app.run(host='0.0.0.0', port=port)
+    app.run(host='0.0.0.0', port=port,debug=True)
