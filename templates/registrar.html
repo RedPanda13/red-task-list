@@ -1,0 +1,54 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+<style>
+
+    body {
+        background-color: #638CB8;
+    }
+
+    input {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+    }
+
+    .center-column {
+        width: 600px;
+        margin: 30px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 3px;
+        box-shadow: 6px 2px 30px 0px rgba(0,0,0,0.75);
+    }
+
+    .item-row {
+        background-color: #906abd;
+        margin: 10px;
+        padding: 20px;
+        border-radius: 4px;
+        color: #fff;
+        box-shadow: 0px -1px 10px -4px rgba(0,0,0,0.75);
+    }
+    .change-form-p {
+        margin-top: 30px;
+        text-align: center;
+    }
+</style>
+
+
+<div class="center-column">
+    <h4 class="todo-list item-row"><center>Registrar na Lista de Tarefas</center></h4>
+    <form method="POST">
+        <br>
+
+        <label>Nome</label>
+        <input type="text" name="nome" value="" placeholder="Insira seu nome" required/>
+        <label>Usuário</label>
+        <input type="text" name="usuario" value="" placeholder="Insira seu login" required/>
+        <label>Senha</label>
+        <input type="password" name="senha" value="" placeholder="Insira sua senha" required/>
+        <button type="submit" class="item-row todo-list btn " style="margin-left: -0px;">Registrar</button>
+    </form>
+    <p class="change-form-p">Já possui uma conta? <a href="{{ url_for('.logar') }}">Clique Aqui!</a></p>
+</div>
