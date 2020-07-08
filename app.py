@@ -8,7 +8,7 @@ app.secret_key = "esse troco e chato"
 # Configuração DB 
 
 
-client = MongoClient("mongodb+srv://stephan:feichas@cluster0-jyq03.gcp.mongodb.net/usuario?retryWrites=true&w=majority")
+client = MongoClient("mongodb+srv://<user>:<pasword>@cluster0-jyq03.gcp.mongodb.net/<db>?retryWrites=true&w=majority")
 db = client.feichas
 user = db.usuarios
 task = db.tarefas
