@@ -1,4 +1,4 @@
-Aplicação desenvolvida utilizando Python, Flask e um cluster de MongoDB como banco de dados.
+Esta aplicação desenvolvida utilizando Python, Flask e um cluster de MongoDB como banco de dados.
 
 Link da aplicação rodando: https://lista-tarefas-art-leo.herokuapp.com/
 
