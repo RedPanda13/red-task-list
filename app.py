@@ -1,19 +1,9 @@
 from flask import Flask, render_template, request, redirect, url_for, flash
 from pymongo import MongoClient
 from datetime import date
-
-app = Flask(__name__)
-app.secret_key = "esse troco e chato"
-
-# Configuração DB 
+from config import user, task, app, send_mail
 
 
-client = MongoClient("mongodb+srv://stephan:feichas@cluster0-jyq03.gcp.mongodb.net/usuario?retryWrites=true&w=majority")
-db = client.feichas
-user = db.usuarios
-task = db.tarefas
-
-# Rotas
 @app.route('/',methods=['GET','POST'])
 def logar():
     
@@ -50,10 +40,14 @@ def registrar():
             "nome": request.form["nome"],
             "usuario": request.form["usuario"],
             "senha": request.form["senha"],
+            "email": request.form["email"],
             "criacao": data
         }
 
         user.insert_one(usuario)
+        msg = "<h1>Ola, {} </h1>".format(request.form["nome"])
+
+        send_mail(request.form["email"],msg)
 
         return redirect(url_for(".logar"))
 
