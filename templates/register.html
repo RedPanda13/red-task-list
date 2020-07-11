@@ -8,7 +8,7 @@
   <meta name="author" content=""/>
   <title>Dashtreme Admin - Free Dashboard for Bootstrap 4 by Codervent</title>
   <!-- loader-->
-  <link  href="{{url_for('static', filename='css/pace.min.css')}}" rel="stylesheet"/>
+  <link href="{{url_for('static', filename='css/pace.min.css')}}" rel="stylesheet"/>
   <script src="{{url_for('static', filename='js/pace.min.js')}}"></script>
   <!--favicon-->
   <link rel="icon" href="{{url_for('static', filename='images/favicon.ico')}}" type="image/x-icon">
@@ -19,7 +19,7 @@
   <!-- Icons CSS-->
   <link href="{{url_for('static', filename='css/icons.css')}}" rel="stylesheet" type="text/css"/>
   <!-- Custom Style-->
-  <link href="{{url_for('static', filename='css/app-style.css')}}" rel="stylesheet"/>
+  <link href="{{url_for('static', filename='/css/app-style.css')}}" rel="stylesheet"/>
   
 </head>
 
@@ -32,58 +32,73 @@
 <!-- Start wrapper-->
  <div id="wrapper">
 
- <div class="loader-wrapper"><div class="lds-ring"><div></div><div></div><div></div><div></div></div></div>
-	<div class="card card-authentication1 mx-auto my-5">
+	<div class="card card-authentication1 mx-auto my-4">
 		<div class="card-body">
 		 <div class="card-content p-2">
 		 	<div class="text-center">
 		 		<img src="{{url_for('static', filename='images/logo-icon.png')}}" alt="logo icon">
 		 	</div>
-		  <div class="card-title text-uppercase text-center py-3">Red Task List</div>
-		    <form method="POST">
+		  <div class="card-title text-uppercase text-center py-3">Sign Up</div>
+		    <form  method="POST">
 			  <div class="form-group">
-			  <label for="exampleInputUsername" class="sr-only">Usuario</label>
+			  <label for="exampleInputName" class="sr-only">Nome</label>
 			   <div class="position-relative has-icon-right">
-				  <input type="text" id="usuario" name="usuario" class="form-control input-shadow" placeholder="Usuário">
+				  <input type="text" id="nome" name="nome" class="form-control input-shadow" placeholder="Digite seu Nome" required>
 				  <div class="form-control-position">
 					  <i class="icon-user"></i>
 				  </div>
 			   </div>
-			  </div>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmailId" class="sr-only">Email</label>
+           <div class="position-relative has-icon-right">
+            <input type="email" id="email" name="email" class="form-control input-shadow" placeholder="Digite seu Email" required>
+            <div class="form-control-position">
+              <i class="icon-envelope-open"></i>
+            </div>
+           </div>
+          </div>
+        <div class="form-group">
+          <label for="exampleInputName" class="sr-only">Usuário</label>
+           <div class="position-relative has-icon-right">
+            <input type="text" id="usuario" name="usuario" class="form-control input-shadow" placeholder="Escolha seu Nome de Usuário" required>
+            <div class="form-control-position">
+              <i class="icon-user"></i>
+            </div>
+          </div>
+        </div>
 			  <div class="form-group">
-			  <label for="exampleInputPassword" class="sr-only">Senha</label>
+			   <label for="exampleInputPassword" class="sr-only">Senha</label>
 			   <div class="position-relative has-icon-right">
-				  <input type="password" id="senha" name="senha" class="form-control input-shadow" placeholder="Senha">
+				  <input type="password" id="senha" name="senha" class="form-control input-shadow" placeholder="Escolha sua Senha" required>
 				  <div class="form-control-position">
 					  <i class="icon-lock"></i>
 				  </div>
 			   </div>
 			  </div>
-			<div class="form-row">
-			 <div class="form-group col-6">
-			   <!--<div class="icheck-material-white">
-                <input type="checkbox" id="user-checkbox" checked="" />
-                <label for="user-checkbox">Remember me</label>
-			  </div>-->
-			 </div>
-			 <div class="form-group col-6 text-right">
-			  <a href="#">Recuperar Senha</a>
-			 </div>
-			</div>
-			 <button type="submit" class="btn btn-light btn-block">Entrar</button>
-			 
+			  
+			   <div class="form-group">
+			     <div class="icheck-material-white">
+                   <input type="checkbox" id="user-checkbox" checked="" />
+                   <label for="user-checkbox">Concordo Com Os Termos & Condições</label>
+			     </div>
+			    </div>
+			  
+			 <button type="submit" class="btn btn-light btn-block waves-effect waves-light">Registrar-se</button>
+			 			
 			 </form>
 		   </div>
 		  </div>
 		  <div class="card-footer text-center py-3">
-		    <p class="text-warning mb-0">Gostaria de criar um conta? <a href="{{ url_for('.registrar') }}"> Clique Aqui!</a></p>
+		    <p class="text-warning mb-0">Já possui uma conta? <a href="{{ url_for('.logar') }}"> Clique Aqui!</a></p>
 		  </div>
 	     </div>
     
      <!--Start Back To Top Button-->
     <a href="javaScript:void();" class="back-to-top"><i class="fa fa-angle-double-up"></i> </a>
     <!--End Back To Top Button-->
-
+	
+	
 	</div><!--wrapper-->
 	
   <!-- Bootstrap core JavaScript-->

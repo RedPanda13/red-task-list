@@ -8,11 +8,11 @@ from config import user, task, app, send_mail
 def logar():
     
     if request.method == 'POST':
-        usuario = request.form["usuario"]
+        get_usuario = request.form["usuario"]
         senha = str(request.form["senha"])
         
         try: 
-            usuario = user.find_one({"usuario":usuario})
+            usuario = user.find_one({"usuario":get_usuario})
 
             if usuario['senha'] == senha:
                 
@@ -35,13 +35,12 @@ def logar():
 def registrar():
     
     if request.method == 'POST':
-        data = str(date.today())
         usuario = {
             "nome": request.form["nome"],
             "usuario": request.form["usuario"],
             "senha": request.form["senha"],
             "email": request.form["email"],
-            "criacao": data
+            "criacao": str(date.today())
         }
 
         user.insert_one(usuario)
@@ -51,7 +50,7 @@ def registrar():
 
         return redirect(url_for(".logar"))
 
-    return render_template('registrar.html')
+    return render_template('register.html')
 
 
 @app.route('/listar-tarefas/<string:id_usuario>',methods=['GET','POST'])
@@ -59,12 +58,11 @@ def listar_tarefas(id_usuario):
         
 
     if request.method == 'POST':
-        data = str(date.today())
         tarefa = {
             "dono": id_usuario,
             "nome": request.form["tarefa"],
             "status": 0,
-            "criacao": data
+            "criacao": str(date.today())
         }
 
         task.insert_one(tarefa)
