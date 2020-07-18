@@ -1,6 +1,6 @@
 Esta aplicação desenvolvida utilizando Python, Flask e um cluster de MongoDB como banco de dados.
 
-Link da aplicação rodando: https://lista-tarefas-art-leo.herokuapp.com/
+Link da aplicação rodando: https://red-task-list.herokuapp.com/
 
 #Como rodar localmente
 
